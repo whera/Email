@@ -20,6 +20,11 @@ trait Validator
         return (bool) filter_var($email, FILTER_VALIDATE_EMAIL);
     }
 
+    /**
+     * @param string $email
+     *
+     * @return bool
+     */
     public function mxIsValid($email)
     {
         return (bool) checkdnsrr(substr(strrchr($email, "@"), 1), 'MX');
