@@ -21,12 +21,12 @@ trait Validator
     }
 
     /**
-     * @param string $email
+     * @param string $domain
      *
      * @return bool
      */
-    protected function mxIsValid($email)
+    protected function checkMxIsValid($domain)
     {
-        return (bool) checkdnsrr(substr(strrchr($email, "@"), 1), 'MX');
+        return (bool) checkdnsrr($domain, 'MX');
     }
 }

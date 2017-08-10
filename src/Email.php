@@ -71,6 +71,14 @@ final class Email
     }
 
     /**
+     * @return bool
+     */
+    public function mxIsValid()
+    {
+        return $this->checkMxIsValid($this->getHostname());
+    }
+
+    /**
      * @return string
      */
     public function __toString()

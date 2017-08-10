@@ -27,6 +27,19 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $email = new Email('ronaldo@whera');
     }
 
+
+    public function testMXInvalid()
+    {
+        $email = new Email('ronaldo@wheras.com.br');
+        $this->assertFalse($email->mxIsValid());
+    }
+
+    public function testMXValid()
+    {
+        $email = new Email('ronaldo@whera.com.br');
+        $this->assertTrue($email->mxIsValid());
+    }
+
     public function testHostname()
     {
         $email = new Email('ronaldo@whera.com.br');
