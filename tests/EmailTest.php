@@ -59,4 +59,11 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $email = new Email('ronaldo@whera.com.br');
         $this->assertInternalType('array', $email->getMx());
     }
+
+    public function testToString()
+    {
+        $email = new Email('ronaldo@whera.com.br');
+        $this->assertEquals('ronaldo@whera.com.br', $email->__toString());
+        $this->assertEquals($email->getEmail(), $email->__toString());
+    }
 }
