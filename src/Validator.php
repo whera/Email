@@ -25,7 +25,7 @@ trait Validator
      *
      * @return bool
      */
-    public function mxIsValid($email)
+    protected function mxIsValid($email)
     {
         return (bool) checkdnsrr(substr(strrchr($email, "@"), 1), 'MX');
     }
