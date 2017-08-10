@@ -27,15 +27,6 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $email = new Email('ronaldo@whera');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage You must provide an email with valid MX.
-     */
-    public function testMXInvalid()
-    {
-        $email = new Email('ronaldo@wheras.com.br');
-    }
-
     public function testHostname()
     {
         $email = new Email('ronaldo@whera.com.br');

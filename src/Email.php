@@ -33,10 +33,6 @@ final class Email
             throw new InvalidArgumentException('You should inform a valid email.');
         }
 
-        if (!$this->mxIsValid($email)) {
-            throw new InvalidArgumentException('You must provide an email with valid MX.');
-        }
-
         list($this->username, $this->hostname) = explode('@', $email);
     }
 
